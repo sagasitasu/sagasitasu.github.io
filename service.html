@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Title -->
-  <title>Blog - Classic Single Article | Space - Responsive Website Template</title>
+  <title>Modern Business | Space - Responsive Website Template</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -20,7 +20,9 @@
   <link rel="stylesheet" href="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
   <link rel="stylesheet" href="assets/vendor/custombox/dist/custombox.min.css">
   <link rel="stylesheet" href="assets/vendor/animate.css/animate.min.css">
-  <link rel="stylesheet" href="assets/vendor/dzsparallaxer/dzsparallaxer.css">
+  <link rel="stylesheet" href="assets/vendor/fancybox/jquery.fancybox.css">
+  <link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
 
   <!-- CSS Space Template -->
   <link rel="stylesheet" href="assets/css/theme.css">
@@ -138,7 +140,7 @@
         </div>
       </div>
     </header>
-  <!-- ========== END HEADER ========== -->
+    <!-- ========== END HEADER ========== -->
 
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
@@ -637,8 +639,9 @@
   <script src="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="assets/vendor/custombox/dist/custombox.min.js"></script>
   <script src="assets/vendor/custombox/dist/custombox.legacy.min.js"></script>
-  <script src="assets/vendor/dzsparallaxer/dzsparallaxer.js"></script>
-  <script src="assets/vendor/instafeed.js/instafeed.min.js"></script>
+  <script src="assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+  <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
+  <script src="assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 
   <!-- JS Space -->
   <script src="assets/js/hs.core.js"></script>
@@ -649,7 +652,9 @@
   <script src="assets/js/components/hs.malihu-scrollbar.js"></script>
   <script src="assets/js/components/hs.modal-window.js"></script>
   <script src="assets/js/components/hs.show-animation.js"></script>
-  <script src="assets/js/components/hs.instagram.js"></script>
+  <script src="assets/js/components/hs.fancybox.js"></script>
+  <script src="assets/js/components/hs.slick-carousel.js"></script>
+  <script src="assets/js/components/hs.cubeportfolio.js"></script>
   <script src="assets/js/components/hs.go-to.js"></script>
 
   <!-- JS Plugins Init. -->
@@ -700,21 +705,14 @@
       // initialization of show animations
       $.HSCore.components.HSShowAnimation.init('.js-animation-link');
 
-      // initialization of instagram api
-      $.HSCore.components.HSInstagram.init('#instaFeed', {
-        resolution: 'standard_resolution',
-        after: function () {
-          // initialization of masonry.js
-          var $grid = $('.js-instagram').masonry({
-            percentPosition: true
-          });
+      // initialization of fancybox
+      $.HSCore.components.HSFancyBox.init('.js-fancybox');
 
-          // initialization of images loaded
-          $grid.imagesLoaded().progress(function () {
-            $grid.masonry();
-          });
-        }
-      });
+      // initialization of slick carousel
+      $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+
+      // initialization of cubeportfolio
+      $.HSCore.components.HSCubeportfolio.init('.cbp');
 
       // initialization of go to
       $.HSCore.components.HSGoTo.init('.js-go-to');
